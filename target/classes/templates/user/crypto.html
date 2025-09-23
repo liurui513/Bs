@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<title>数字证书管理系统—数据加解密</title>
+<link href="../webjars/bootstrap/3.3.7-1/css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="../webjars/bootstrap/3.3.7-1/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+<script src="../static/jquery-easyui-1.5.5.3/jquery.min.js"></script>
+<script src="../static/layer-v3.1.1/layer/layer.js"></script>
+<script src="../webjars/bootstrap/3.3.7-1/js/bootstrap.js"></script>
+<script type="text/javascript">
+    $(function () {
+        // 加密按钮点击事件
+        $("#btnEncrypt").click(function () {
+            const plaintext = $("#plaintext").val();
+            // 发送加密请求
+            $.ajax({
+                type: 'post',
+                url: 'encrypt',
+                cache: false,
+                data: plaintext,
+                contentType: 'text/plain',
+                success: function (data) {
+                    $("#encryptedData").val(data.encryptedData);
+                    alert('Encryption successful!');
+                },
+                error: function (xhr, status, error) {
+                    alert('Encryption failed: ' + error);
+                }
+            });
+        });
+        // 解密按钮点击事件
+        $("#btnDecrypt").click(function () {
+            const encryptedInput = $("#encryptedInput").val();
+            // 发送解密请求
+            $.ajax({
+                type: 'POST',
+                url: 'decrypt',
+                contentType: 'application/json',
+                data: JSON.stringify({ encryptedData: encryptedInput }),
+                dataType: 'json',
+                success: function (data) {
+                    $("#decryptedData").val(data.decryptedData);
+                    alert('Decryption successful!');
+                },
+                error: function (xhr, status, error) {
+                    alert('Decryption failed: ' + error);
+                }
+            });
+        });
+    });
+</script>
+<style type="text/css">
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+        #home{
+            margin-top: 91px;
+        }
+        #home_1{
+            background: white;
+            width: 70%;
+            margin: 30px auto;
+            padding: 20px 35px;
+        }
+        .box{
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+    .box1{
+        float:right;
+    }
+    .box1{
+        float:left;
+    }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header" style="margin-left: 50px;">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                <span class="sr-only">展开导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="">数字证书管理系统</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="">
+                        欢迎您：
+                        <span sec:authorize="hasRole('ROLE_SYSTEM')"> 开发者 </span>
+                        <span sec:authorize="!hasRole('ROLE_SYSTEM')" sec:authentication="principal.name"></span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" id="mytab">
+                <li><a href="../main1"><span class="glyphicon glyphicon-home"></span> 首页 </a></li>
+                <li sec:authorize="hasRole('ROLE_USER')"><a href="../keypair/generate-key-pair"><span class="glyphicon glyphicon-paperclip"></span> 生成密钥对 </a></li>
+                <li class="active" sec:authorize="hasRole('ROLE_USER')"><a href="../keypair/jiami"><span class="glyphicon glyphicon-certificate"></span> 数据加解密 </a></li>
+                <li sec:authorize="hasRole('ROLE_USER')"><a href="../user/update"><span class="glyphicon glyphicon-pencil"></span> 修改密码 </a></li>
+                <li sec:authorize="hasRole('ROLE_USER')"><a href="../user/all1"><span class="glyphicon glyphicon-pencil"></span> 个人信息 </a></li>
+                <li sec:authorize="hasRole('ROLE_USER')"><a href="../invoice/all"><span class="glyphicon glyphicon-globe"></span> 数字证书管理 </a></li>
+                <li sec:authorize="hasRole('ROLE_USER')"><a href="../question/add"><span class="glyphicon glyphicon-book"></span> 疑问 </a></li>
+                <li onclick="fun_tc()" sec:authorize="hasRole('ROLE_USER')"><a><span class="glyphicon glyphicon-off"></span> 注销 </a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="home">
+    <div id="home_1">
+        <ul class="breadcrumb">
+            <li><span class="glyphicon glyphicon-home"></span>&emsp;当前位置：</li>
+            <li><a class="active">数据加解密</a></li>
+        </ul>
+        <div class="box">
+        <div class="box1">
+            <h2>加密</h2>
+            <textarea id="plaintext" rows="10" cols="50" placeholder="输入待加密数据"></textarea>
+            <br><br>
+            <button id="btnEncrypt">加密</button>
+            <h3>加密后数据:</h3>
+            <textarea id="encryptedData" rows="10" cols="50" readonly></textarea>
+        </div>
+        <div class="box2">
+            <h2>解密</h2>
+            <textarea id="encryptedInput" rows="10" cols="50" placeholder="输入待解密数据"></textarea>
+            <br><br>
+            <button id="btnDecrypt">解密</button>
+            <h3>解密后的数据:</h3>
+            <textarea id="decryptedData" rows="10" cols="50" readonly></textarea>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>

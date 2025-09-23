@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+	<title>数字证书管理系统—提出疑问</title>
+	<link href="../webjars/bootstrap/3.3.7-1/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="../webjars/bootstrap/3.3.7-1/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+	<script src="../static/jquery-easyui-1.5.5.3/jquery.min.js"></script>
+	<script src="../static/layer-v3.1.1/layer/layer.js"></script>
+	<script src="../webjars/bootstrap/3.3.7-1/js/bootstrap.js"></script>
+	<script type="text/javascript">
+		function fun_tc(){
+			layer.confirm("你确定退出吗？", {
+				btn:['确定', '取消']
+			}, function(){
+				window.location.href="../logout1";
+				layer.msg("已退出", {icon: 1});
+			});
+		}
+
+		$(function(){
+			//提交表单方法
+			$("#btn1").click(function(){
+				$.ajax({
+					type: 'post',
+					url: 'save',
+					cache: false,
+					data: $('#myform').serialize(),
+					dataType: 'json',
+					success: function(data){
+						alert('注册成功！');
+						window.location.href = window.location.href;
+						$('#myform').form('clear');
+					}
+				});
+			});
+		});
+
+	</script>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		body{
+			background: url(static/img/beijin.jpg);
+		}
+		#home{
+			margin-top: 91px;
+		}
+		#mytab li a{
+			cursor: pointer;
+		}
+		#home_1{
+			background: white;
+			width: 70%;
+			margin: 30px auto;
+			padding: 20px 35px;
+		}
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header" style="margin-left: 50px;">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+				<span class="sr-only">展开导航</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="">数字证书管理系统</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="menu">
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="">
+						欢迎您：
+						<span sec:authorize="hasRole('ROLE_SYSTEM')"> 开发者 </span>
+						<span sec:authorize="!hasRole('ROLE_SYSTEM')" sec:authentication="principal.name"></span>
+					</a>
+				</li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right" id="mytab">
+				<li><a href="../main1"><span class="glyphicon glyphicon-home"></span> 首页 </a></li>
+				<li sec:authorize="hasRole('ROLE_USER')"><a href="../keypair/generate-key-pair"><span class="glyphicon glyphicon-paperclip"></span> 生成密钥对 </a></li>
+				<li sec:authorize="hasRole('ROLE_USER')"><a href="../keypair/jiami"><span class="glyphicon glyphicon-certificate"></span> 数据加解密 </a></li>
+				<li sec:authorize="hasRole('ROLE_USER')"><a href="../user/update"><span class="glyphicon glyphicon-pencil"></span> 修改密码 </a></li>
+				<li sec:authorize="hasRole('ROLE_USER')"><a href="../user/all1"><span class="glyphicon glyphicon-pencil"></span> 个人信息 </a></li>
+				<li sec:authorize="hasRole('ROLE_USER')"><a href="../invoice/all"><span class="glyphicon glyphicon-globe"></span> 数字证书管理 </a></li>
+				<li class="active" sec:authorize="hasRole('ROLE_USER')"><a href=""><span class="glyphicon glyphicon-book"></span> 疑问 </a></li>
+				<li onclick="fun_tc()" sec:authorize="hasRole('ROLE_USER')"><a><span class="glyphicon glyphicon-off"></span> 注销 </a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<div id="home">
+	<div id="home_1">
+		<ul class="breadcrumb">
+			<li><span class="glyphicon glyphicon-home"></span>&emsp;当前位置：</li>
+			<li><a class="active">用户疑问</a></li>
+		</ul>
+		<div style="margin-top: 20px; width: 75%;">
+			<form action="" method="post" id = "myform" class="form-horizontal">
+				<table style="margin-left: 40px; margin-top: 10px; margin-bottom: 10px;">
+				<input type="hidden" name = "question">
+				<tr>
+					<td>用户疑问：</td>
+					<td><textarea type="text" id ="question" name ="question" class="easyui-validatebox form-control" required=true missingMessage="标题必填!" rows="10" cols="50"></textarea></td>
+				</tr>
+				<td colspan="2" align="center">
+					<a id="btn1" class="btn btn-info">确定</a>
+					<a id="btn2" class="btn btn-danger">关闭</a>
+				</td>
+				</table>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>

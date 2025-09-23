@@ -1,0 +1,2 @@
+INSERT INTO `certificate_revocation_list`(`id`, `crl_number`, `issuer`, `next_update`, `this_update`) VALUES (1, 'e5626b7b-e9ee-4548-82c4-0d8bd0b8c605', 'cn=\'北京教育局\', o=\'北京教育局\', ou=\'北京所属教育局\', l=\'北京\', st=\'北京\', c=\'CN\'', '2025-04-23 17:27:52', '2025-04-16 17:27:52');
+INSERT INTO `certificate_revocation_list`(`id`, `crl_number`, `issuer`, `next_update`, `this_update`) VALUES (2, '1087bb4d-1d07-4f24-b8eb-e5cf6a6fbf17', 'cn=\'内蒙古教育局\', o=\'内蒙古教育局\', ou=\'内蒙古所属教育局\', l=\'内蒙古\', st=\'内蒙古\', c=\'CN\'', '2025-05-22 15:13:14', '2025-05-15 15:13:14');

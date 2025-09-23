@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e74d885f-de93-4382-8fce-6b5023742f37" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="D:\Maven\apache-maven-3.9.11" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="userSettingsFile" value="D:\Maven\apache-maven-3.9.11\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2u5E00FUf4kgCtwPUC3zw9GMS1s" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "Spring Boot.CertificateApplication.executor": "Run",
+    "last_opened_file_path": "C:/Users/ha/Desktop/bs",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDK",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true",
+    "应用程序.RSAUtils.executor": "Run"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.project.certificate" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\certificate\src\main\resources\templates\admin" />
+      <recent name="D:\certificate\src\main\resources\templates\user" />
+      <recent name="D:\certificate\src\main\resources\templates" />
+      <recent name="D:\certificate\src\main\resources\static" />
+      <recent name="D:\certificate\src\main\java\com\project\certificate" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.project.certificate.custom" />
+      <recent name="com.project.certificate.controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\certificate\src\main\resources\templates" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.CertificateApplication">
+    <configuration name="RSAUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.project.certificate.custom.RSAUtils" />
+      <module name="certificate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.project.certificate.custom.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CertificateApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="certificate" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.certificate.CertificateApplication" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.RSAUtils" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e74d885f-de93-4382-8fce-6b5023742f37" name="Default Changelist" comment="" />
+      <created>1741529807245</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741529807245</updated>
+      <workItem from="1741529809648" duration="6690000" />
+      <workItem from="1741608452102" duration="5103000" />
+      <workItem from="1741617957135" duration="26000" />
+      <workItem from="1741700228032" duration="431000" />
+      <workItem from="1741703840395" duration="12311000" />
+      <workItem from="1741781409964" duration="20575000" />
+      <workItem from="1741865874075" duration="20038000" />
+      <workItem from="1741951345620" duration="17430000" />
+      <workItem from="1742040270187" duration="14645000" />
+      <workItem from="1742216326502" duration="4106000" />
+      <workItem from="1742303710299" duration="1243000" />
+      <workItem from="1742433067916" duration="2552000" />
+      <workItem from="1742454366626" duration="529000" />
+      <workItem from="1742455069699" duration="12077000" />
+      <workItem from="1742515793968" duration="9049000" />
+      <workItem from="1742558071935" duration="1223000" />
+      <workItem from="1742607018161" duration="20394000" />
+      <workItem from="1742692622300" duration="9985000" />
+      <workItem from="1742703018807" duration="142000" />
+      <workItem from="1742727715254" duration="10557000" />
+      <workItem from="1742778539710" duration="16112000" />
+      <workItem from="1742995365679" duration="167000" />
+      <workItem from="1743035425887" duration="59000" />
+      <workItem from="1743403077043" duration="3438000" />
+      <workItem from="1743420054309" duration="2225000" />
+      <workItem from="1743987560863" duration="11798000" />
+      <workItem from="1744007446073" duration="10306000" />
+      <workItem from="1744077507854" duration="3867000" />
+      <workItem from="1744085015939" duration="16285000" />
+      <workItem from="1744162698980" duration="17745000" />
+      <workItem from="1744356826333" duration="9735000" />
+      <workItem from="1744615431873" duration="14137000" />
+      <workItem from="1744678590505" duration="22475000" />
+      <workItem from="1744786579055" duration="6067000" />
+      <workItem from="1744795119670" duration="9842000" />
+      <workItem from="1745486194457" duration="5819000" />
+      <workItem from="1745547319899" duration="13848000" />
+      <workItem from="1747101898212" duration="13511000" />
+      <workItem from="1747227523786" duration="2864000" />
+      <workItem from="1747279692295" duration="10419000" />
+      <workItem from="1758458236869" duration="12000" />
+      <workItem from="1758458266558" duration="93000" />
+      <workItem from="1758458386131" duration="673000" />
+      <workItem from="1758459246310" duration="246000" />
+      <workItem from="1758459512184" duration="331000" />
+      <workItem from="1758459860542" duration="1058000" />
+      <workItem from="1758463484085" duration="553000" />
+      <workItem from="1758635024988" duration="373000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

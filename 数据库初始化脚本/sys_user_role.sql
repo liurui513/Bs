@@ -1,0 +1,9 @@
+INSERT INTO `sys_user_role`(`user_id`, `role_id`) VALUES (2, 2);
+INSERT INTO `sys_user_role`(`user_id`, `role_id`) VALUES (4, 3);
+INSERT INTO `sys_user_role`(`user_id`, `role_id`) VALUES (12, 3);
+INSERT INTO `sys_user_role`(`user_id`, `role_id`) VALUES (29, 2);
+INSERT INTO `sys_user_role`(`user_id`, `role_id`) VALUES (36, 3);
+INSERT INTO `sys_user_role`(`user_id`, `role_id`) VALUES (38, 3);
+INSERT INTO `sys_user_role`(`user_id`, `role_id`) VALUES (39, 3);
+INSERT INTO `sys_user_role`(`user_id`, `role_id`) VALUES (1, 1);
+INSERT INTO `sys_user_role`(`user_id`, `role_id`) VALUES (40, 2);

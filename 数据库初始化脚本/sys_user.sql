@@ -1,0 +1,9 @@
+INSERT INTO `sys_user`(`id`, `name`, `password`, `sf`, `username`) VALUES (1, NULL, '$2a$10$U/TvAlTags07prci2XQcKePhHlx0MAXVwHUPHZCGncrkHe0q1OB8y', NULL, 'system');
+INSERT INTO `sys_user`(`id`, `name`, `password`, `sf`, `username`) VALUES (2, '管理员', '$2a$10$U/TvAlTags07prci2XQcKePhHlx0MAXVwHUPHZCGncrkHe0q1OB8y', NULL, 'admin');
+INSERT INTO `sys_user`(`id`, `name`, `password`, `sf`, `username`) VALUES (4, '张三', '$2a$10$Owsj119ZNg4yj4tutYVnsOVyZ8myLM7Q78f8XsmHj8uZBQXlR3AG.', 1, '001');
+INSERT INTO `sys_user`(`id`, `name`, `password`, `sf`, `username`) VALUES (12, '李四', '$2a$10$ldvEiFuVyY.Gm1WmW9Waw.mgbh.QtgCKpjo6b0LWEOXDzCQvlgY3C', 1, '002');
+INSERT INTO `sys_user`(`id`, `name`, `password`, `sf`, `username`) VALUES (29, '王二凡', '$2a$10$/m7xmSNAUZGJGZv0GPJMD.7Qi/hVQ0gmK7v7vQVTXGv0eTd5dBGgy', NULL, 'admin2');
+INSERT INTO `sys_user`(`id`, `name`, `password`, `sf`, `username`) VALUES (36, '王五', '$2a$10$MgkSShwAj0rEIsBWXMUX4uDd3rG.9E9bMkI4joE38lZWRd7T8kQ9S', 1, '003');
+INSERT INTO `sys_user`(`id`, `name`, `password`, `sf`, `username`) VALUES (38, '小小', '$2a$10$ocySG1i./ZS2NKgyndEn4O7mwU5sZS0Ijgl/k2wNxEG.6Y5Fzb8Ee', 1, '2230');
+INSERT INTO `sys_user`(`id`, `name`, `password`, `sf`, `username`) VALUES (39, '丫丫', '$2a$10$dMXIle7BIsY8XDus8Po2pegSNo9tKlz6fSh3Tf.Cg3OUbc9FHFlM.', 1, '2233');
+INSERT INTO `sys_user`(`id`, `name`, `password`, `sf`, `username`) VALUES (40, '测试', '$2a$10$BgpKVBo7d88UgDW9wMKSNuocJtt4GLo/SsgHHcnFZHJ7eHlRgKQ9S', NULL, 'admin3');

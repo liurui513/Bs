@@ -1,0 +1,81 @@
+    /**
+     * 获取指定颁发者的CRL
+     * @param issuer CRL颁发者
+     * @return CRL对象
+     * @throws //CrlNotFoundException CRL不存在时抛出
+     */
+    public CertificateRevocationList getCrl(String issuer) {
+        return crlRepository.findByIssuer(issuer)
+                .orElseThrow(() -> new CrlNotFoundException("CRL not found for issuer: " + issuer));
+    }
+
+
+
+
+    /**
+     * 生成证书吊销列表(CRL)
+     * @param issuer CRL颁发者(通常与CA相同)
+     * @return 生成的CRL对象
+     */
+    public CertificateRevocationList generateCrl(String issuer) {
+        // 查找现有CRL，不存在则创建新的
+        CertificateRevocationList crl = crlRepository.findByIssuer(issuer)
+                .orElse(new CertificateRevocationList());
+
+        // 设置CRL属性
+        crl.setIssuer(issuer);
+        crl.setThisUpdate(new Date());  // 当前时间为本次更新时间
+        crl.setNextUpdate(calculateNextUpdateDate());  // 计算下次更新时间
+        crl.setCrlNumber(generateCrlNumber());  // 生成唯一CRL编号
+
+        // 获取所有吊销证书并转换为CRL条目
+        List<RevokedCertificateEntry> entries = getRevokedCertificates().stream()
+                .map(cert -> {
+                    RevokedCertificateEntry entry = new RevokedCertificateEntry();
+                    entry.setSerialNumber(cert.getSerialNumber());
+                    entry.setRevocationDate(cert.getRevocationDate());
+                    entry.setRevocationReason(cert.getRevocationReason());
+                    entry.setCrl(crl);  // 设置关联的CRL
+                    return entry;
+                })
+                .collect(Collectors.toList());
+
+        crl.setRevokedCertificates(entries);  // 设置CRL条目
+        return crlRepository.save(crl);  // 保存CRL到数据库
+    }
+
+
+
+
+   /**
+     * 获取所有已吊销的证书列表
+     * @return 已吊销证书列表
+     */
+    public List<Certificates> getRevokedCertificates() {
+        return certificatesDAO.findByStatus(true);  // 查询所有revoked=true的证书
+    }
+
+
+    /**
+     * 检查证书是否被吊销
+     * @param serialNumber 证书序列号
+     * @return true表示已吊销，false表示未吊销
+     * @throws //CertificateNotFoundException 证书不存在时抛出
+     */
+    public boolean isCertificateStatus(String serialNumber) {
+        return certificatesDAO.findBySerialNumber(serialNumber)
+                .map(Certificates::isStatus)  // 提取吊销状态
+                .orElseThrow(() -> new CertificateNotFoundException("Certificate not found with serial: " + serialNumber));
+    }
+
+ 
+
+
+
+改一改那个展示用户个人信息的地方
+
+电话能否统一为固定电话或成都为11位的？
+
+keystore一次可以存多个证书不？
+
+下午改代码/明天写ppt

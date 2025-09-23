@@ -1,0 +1,51 @@
+@charset "UTF-8";
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background: url(../img/beijin.jpg);
+}
+#logo{
+	float: left; 
+	width: 205px;
+	color: white; 
+	height: 51px; 
+	background: #007BFF;//管理系统这几个字的背景
+}
+#dhl1{
+	background: #1f2837;//功能的背景
+	width: 241px; 
+	float: left; 
+	height: 500px;
+	padding-top: 15px;
+	margin-top: 52px;
+	position: fixed;
+}
+#home{
+	float: left; 
+	position: absolute; 
+	margin-left: 242px;
+	width: 100%;
+	margin-top: 52px;
+	height: 500px;
+}
+.aaa{
+	font-size: 20px;
+	color: #269ABC;
+	padding: 10px 40px;
+	margin-bottom: 0px;
+	border-bottom: 1px solid #fdf8ff;
+}
+p a:hover{
+	color: white;
+	cursor: pointer;
+}
+div ul li a{
+	cursor: pointer;
+}
+.aaa:hover{
+	cursor: pointer;
+	background: #000000;
+	color: white;
+}
