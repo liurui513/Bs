@@ -290,11 +290,11 @@ public class InvoiceController {
 			model.setDate(dateNowStr);
 	        model.setSerial(year+month+day+intFlag);//编号
 	        model.setCode(intFlag+month+day+intFlag);//代码
-	        model.setState("证书申请中");
-	        model.setLessee(user2.getLessee());
-	        model.setZstype(0);
-	        model.setPublicKey(publickey);
-	        invoiceDAO.save(model);
+            model.setState("审核中");
+            model.setLessee(user2.getLessee());
+            model.setZstype(0);
+            model.setPublicKey(publickey);
+            invoiceDAO.save(model);
 	        SysUser user = userUtils.getUser();
 			System.out.println("添加证书");
 		}else {
